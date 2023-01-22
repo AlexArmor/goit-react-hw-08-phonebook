@@ -9,21 +9,22 @@ import { selectError, selectLoading } from 'redux/selectors';
 import { Section } from './Section.styled';
 
 export default function Tasks() {
-    const dispatch = useDispatch();
-    const isLoading = useSelector(selectLoading);
+  const dispatch = useDispatch();
+  const isLoading = useSelector(selectLoading);
+  const error = useSelector(selectError);
 
-    useEffect(() => {
-        dispatch(fetchContacts());
-    }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
-    return (
-        <Section>
-            <h1>Phone book</h1>
-            <ContactForm />
-            <h2>Contacts</h2>
-            <Filter />
-            {isLoading && !error && <b>Request in progress...</b>}
-            <ContactList />
-        </Section>
-    );
+  return (
+    <Section>
+      <h1>Phone book</h1>
+      <ContactForm />
+      <h2>Contacts</h2>
+      <Filter />
+      {isLoading && !error && <b>Request in progress...</b>}
+      <ContactList />
+    </Section>
+  );
 }
