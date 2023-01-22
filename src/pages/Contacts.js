@@ -18,13 +18,16 @@ export default function Tasks() {
   }, [dispatch]);
 
   return (
-    <Section>
-      <h1>Phone book</h1>
-      <ContactForm />
-      <h2>Contacts</h2>
-      <Filter />
-      {isLoading && !error && <b>Request in progress...</b>}
-      <ContactList />
-    </Section>
+    <>
+      <Helmet><title>Phone book</title></Helmet>
+      <Section>
+        <h1>Phone book</h1>
+        <ContactForm />
+        <h2>Contacts</h2>
+        <Filter />
+        {isLoading && !error && <b>Request in progress...</b>}
+        <ContactList />
+      </Section>
+    </>
   );
 }
