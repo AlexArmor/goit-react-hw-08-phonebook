@@ -36,7 +36,7 @@ export const register = createAsyncThunk(
  * body: { email, password }
  */
 export const logIn = createAsyncThunk(
-    'auth/login',
+    'auth/logIn',
     async (credentials, thunkAPI) => {
         try {
             const res = await axios.post('/users/login', credentials);
@@ -82,7 +82,7 @@ export const refreshUser = createAsyncThunk(
         try {
             // If there is a token, add it to the HTTP header and perform the request
             setAuthHeader(persistedToken);
-            const res = await axios.get('/users/me');
+            const res = await axios.get('/users/current');
             return res.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);

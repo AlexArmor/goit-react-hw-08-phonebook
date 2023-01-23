@@ -8,7 +8,7 @@ import { fetchContacts } from 'redux/contacts/operations';
 import { selectError, selectLoading } from 'redux/contacts/selectors';
 import { Section } from 'components/ContactForm/ContactForm.styled';
 
-export default function Tasks() {
+export default function Contacts() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectLoading);
   const error = useSelector(selectError);
