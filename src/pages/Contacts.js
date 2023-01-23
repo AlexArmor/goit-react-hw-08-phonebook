@@ -4,8 +4,8 @@ import { Helmet } from 'react-helmet';
 import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
-import { fetchContacts } from 'redux/operations';
-import { selectError, selectLoading } from 'redux/selectors';
+import { fetchContacts } from 'redux/contacts/operations';
+import { selectError, selectLoading } from 'redux/contacts/selectors';
 import { Section } from './Section.styled';
 
 export default function Tasks() {
@@ -19,7 +19,9 @@ export default function Tasks() {
 
   return (
     <>
-      <Helmet><title>Phone book</title></Helmet>
+      <Helmet>
+        <title>Phone book</title>
+      </Helmet>
       <Section>
         <h1>Phone book</h1>
         <ContactForm />

@@ -3,11 +3,11 @@ import { Title } from './ContactForm.styled';
 import { InputName } from './ContactForm.styled';
 import { InputNumber } from './ContactForm.styled';
 import { BtnSubmit } from './ContactForm.styled';
-import { addContacts } from 'redux/operations';
+import { addContacts } from 'redux/contacts/operations';
 import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { useSelector } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/contacts/selectors';
 
 export const ContactForm = () => {
   const contacts = useSelector(selectContacts);
