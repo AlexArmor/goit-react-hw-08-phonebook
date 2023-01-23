@@ -6,7 +6,7 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectError, selectLoading } from 'redux/contacts/selectors';
-import { Section } from './Section.styled';
+import { Section } from 'components/ContactForm/ContactForm.styled';
 
 export default function Tasks() {
   const dispatch = useDispatch();
