@@ -11,6 +11,7 @@ export const GlobalStyleComponent = createGlobalStyle`
     margin: 0;
     list-style: none;
   }
+  body,
   h1,
   h2,
   h3,

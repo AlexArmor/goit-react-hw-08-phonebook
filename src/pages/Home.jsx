@@ -1,12 +1,14 @@
+import { Container, Typography } from '@mui/material';
 export default function Home() {
   return (
-    <div>
-      <h1>
+    <Container>
+      <Typography
+        variant="h3"
+        component="h1"
+        sx={{ textAlign: 'center', paddingTop: '60px' }}
+      >
         Phonebook welcome page{' '}
-        <span role="img" aria-label="Greeting icon">
-          💁‍♀️
-        </span>
-      </h1>
-    </div>
+      </Typography>
+    </Container>
   );
 }
