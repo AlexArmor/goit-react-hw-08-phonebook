@@ -15,16 +15,22 @@ export const ContactList = () => {
   );
 
   return (
-    <List>
+    <List
+      sx={{
+        fontSize: '30px',
+        fontFamily: 'roboto',
+      }}
+    >
       {filteredContacts.map(({ id, name, number }) => {
         return (
-          <ListItem key={id}>
+          <ListItem key={id} sx={{ justifyContent: 'center' }}>
             {name}: {number}
             <IconButton
               type="button"
+              size="large"
               onClick={() => dispatch(deleteContacts(id))}
             >
-              <DeleteForeverIcon />
+              <DeleteForeverIcon fontSize="inherit" />
             </IconButton>
           </ListItem>
         );

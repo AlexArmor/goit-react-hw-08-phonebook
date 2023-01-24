@@ -37,7 +37,16 @@ export default function Contacts() {
           Contacts
         </Typography>
         <Filter />
-        {isLoading && !error && <b>Request in progress...</b>}
+        {/* isLoading && !error && */}
+        {
+          <Typography
+            variant="h5"
+            component="p"
+            sx={{ textAlign: 'center', margin: '0 auto' }}
+          >
+            Request in progress...
+          </Typography>
+        }
         <ContactList />
       </Box>
     </>
