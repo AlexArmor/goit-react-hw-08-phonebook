@@ -1,8 +1,10 @@
 import { selectContacts, selectFilter } from 'redux/contacts/selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteContacts } from 'redux/contacts/operations';
-import { Item } from './ContactList.styled';
-import { BtnDeleteItem } from './ContactList.styled';
+// import { Item } from './ContactList.styled';
+// import { BtnDeleteItem } from './ContactList.styled';
+import { List, ListItem, IconButton } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -13,20 +15,20 @@ export const ContactList = () => {
   );
 
   return (
-    <ul>
+    <List>
       {filteredContacts.map(({ id, name, number }) => {
         return (
-          <Item key={id}>
+          <ListItem key={id}>
             {name}: {number}
-            <BtnDeleteItem
+            <IconButton
               type="button"
               onClick={() => dispatch(deleteContacts(id))}
             >
               delete
-            </BtnDeleteItem>
-          </Item>
+            </IconButton>
+          </ListItem>
         );
       })}
-    </ul>
+    </List>
   );
 };
