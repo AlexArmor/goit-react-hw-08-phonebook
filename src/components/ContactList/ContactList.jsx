@@ -4,7 +4,7 @@ import { deleteContacts } from 'redux/contacts/operations';
 // import { Item } from './ContactList.styled';
 // import { BtnDeleteItem } from './ContactList.styled';
 import { List, ListItem, IconButton } from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ export const ContactList = () => {
               type="button"
               onClick={() => dispatch(deleteContacts(id))}
             >
-              delete
+              <DeleteForeverIcon />
             </IconButton>
           </ListItem>
         );
