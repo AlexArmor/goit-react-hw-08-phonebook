@@ -24,10 +24,14 @@ export const RegisterForm = () => {
       autoComplete="on"
       component="form"
       sx={{
+        margin: '0 auto 0 auto',
         display: 'flex',
         justifyContent: 'center',
+        alignItems: 'center',
         padding: '20px',
         gap: '10px',
+        flexDirection: 'column',
+        maxWidth: '350px',
       }}
     >
       <TextField
@@ -36,6 +40,9 @@ export const RegisterForm = () => {
         id="username-basic"
         label="Username"
         variant="outlined"
+        sx={{
+          width: '100%',
+        }}
       />
       <TextField
         type="email"
@@ -43,6 +50,9 @@ export const RegisterForm = () => {
         id="email-basic"
         label="Email"
         variant="outlined"
+        sx={{
+          width: '100%',
+        }}
       />
       <TextField
         type="password"
@@ -50,6 +60,9 @@ export const RegisterForm = () => {
         id="password-basic"
         label="Password"
         variant="outlined"
+        sx={{
+          width: '100%',
+        }}
       />
       <Button type="submit" variant="contained">
         Register

@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Helmet } from 'react-helmet';
 import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectError, selectLoading } from 'redux/contacts/selectors';
-import { Section } from 'components/ContactForm/ContactForm.styled';
+import { Box, Typography } from '@mui/material';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -19,17 +18,28 @@ export default function Contacts() {
 
   return (
     <>
-      <Helmet>
-        <title>Phone book</title>
-      </Helmet>
-      <Section>
-        <h1>Phone book</h1>
+      <Box>
+        <Typography
+          variant="h4"
+          sx={{
+            textAlign: 'center',
+          }}
+        >
+          Phone book
+        </Typography>
         <ContactForm />
-        <h2>Contacts</h2>
+        <Typography
+          variant="h4"
+          sx={{
+            textAlign: 'center',
+          }}
+        >
+          Contacts
+        </Typography>
         <Filter />
         {isLoading && !error && <b>Request in progress...</b>}
         <ContactList />
-      </Section>
+      </Box>
     </>
   );
 }
