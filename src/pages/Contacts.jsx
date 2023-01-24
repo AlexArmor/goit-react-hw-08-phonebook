@@ -37,8 +37,8 @@ export default function Contacts() {
           Contacts
         </Typography>
         <Filter />
-        {/* isLoading && !error && */}
-        {
+
+        {isLoading && !error && (
           <Typography
             variant="h5"
             component="p"
@@ -46,7 +46,7 @@ export default function Contacts() {
           >
             Request in progress...
           </Typography>
-        }
+        )}
         <ContactList />
       </Box>
     </>
