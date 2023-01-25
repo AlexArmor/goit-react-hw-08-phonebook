@@ -5,14 +5,28 @@ import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
 import { Provider } from 'react-redux';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import 'index.css';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#91e689',
+    },
+    secondary: {
+      main: '#fff',
+    },
+  },
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
-          <App />
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
         </BrowserRouter>
       </PersistGate>
     </Provider>
